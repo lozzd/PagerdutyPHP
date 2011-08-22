@@ -1,0 +1,24 @@
+Pagerduty PHP
+
+- A PHP library of handy functions utilising the Pagerduty API.
+
+
+* What's included?
+
+pagerduty.php - The file which has all the functions that can be used. I say all, so far I only have two, and both relate to getting the current person on call. 
+pagerdutycron.php - A script designed to run from cron that will either ping irccat or send an email (or both) when the person on call in your rotations changes. 
+timeago.php - A support function provided by alex at nyoc dot net. 
+
+* How do I use it? 
+
+You need to enter some basic configuration information into pagerduty.php before you can use it, relating to your login and your schedules. 
+
+After you've done this, you are free to include pagerduty.php and use the functions in the file. Keep reading for info on other files.
+
+
+* pagerdutycron.php
+
+Setup is fairly simple; there are a few configuration options at the top of the file relating to whether you want to send an email, or send a message to irccat, or both, and where to send those messages. 
+After you've done that, run it by hand once to ensure everything works as planned, and then set it up in cron to run as often as you please (for example, 1 minute). 
+
+When it detects a change in rotation, it will perform your selected action to alert the relevant parties. 
